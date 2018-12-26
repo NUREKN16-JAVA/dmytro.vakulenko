@@ -2,63 +2,65 @@ package ua.nure.kn16.vakulenko.usermanagement;
 
 import java.time.LocalDate;
 
+
 class User {
-	private long id;
-	private String firstName;
-	private String lastName;
-	private LocalDate dateOfBirth;
+    private long id;
+    private String firstName;
+    private String lastName;
+    private LocalDate dateOfBirth;
 
-	User(long id, String firstName, String lastName, LocalDate dateOfBirth) {
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.dateOfBirth = dateOfBirth;
-	}
 
-	public long getId() {
-		return id;
-	}
+    User(long id, String firstName, String lastName, LocalDate dateOfBirth) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public LocalDate getDateOfBirth() {
-		return dateOfBirth;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public void setDateOfBirth(LocalDate dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
 
-	String getFullName() {
-		return lastName + ", " + firstName;
-	}
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
-	long getAge() {
-		LocalDate date = LocalDate.now();
-		int age = date.getYear() - dateOfBirth.getYear();
-		if (date.getMonthValue() < dateOfBirth.getMonthValue() || (date.getMonthValue() == dateOfBirth.getMonthValue()
-				&& date.getDayOfMonth() < dateOfBirth.getDayOfMonth())) {
-			--age;
-		}
+    String getFullName() {
+        return lastName + ", " + firstName;
+    }
 
-		return age;
-	}
+    long getAge() {
+        LocalDate date = LocalDate.now();
+        int age = date.getYear() - dateOfBirth.getYear();
+        if (date.getMonthValue() < dateOfBirth.getMonthValue() ||
+                (date.getMonthValue() == dateOfBirth.getMonthValue() && date.getDayOfMonth() < dateOfBirth.getDayOfMonth())) {
+            --age;
+        }
+
+        return age;
+    }
 }
